@@ -1,0 +1,20 @@
+from clothes.models import *
+from django.contrib import admin
+
+admin.site.register(Pant)
+admin.site.register(Fabric)
+admin.site.register(Fly)
+admin.site.register(Closure)
+admin.site.register(Weave)
+admin.site.register(Origin)
+admin.site.register(Treatment)
+admin.site.register(Pocket_Style)
+admin.site.register(Pocket_Location)
+admin.site.register(Certification)
+admin.site.register(Gender)
+admin.site.register(Color)
+admin.site.register(Pattern)
+admin.site.register(Style)
+admin.site.register(Designer)
+admin.site.register(Retailer)
+admin.site.register(Pant_Stock_Item)

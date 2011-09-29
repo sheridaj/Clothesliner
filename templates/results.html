@@ -1,0 +1,8 @@
+<h1>RESULTS</h1>
+
+<form action="/product_info/" method="post">
+{% csrf_token %}
+{% for item in pants %}
+    <li> {{ item.designer }} {{item.style}} {{item.waist}} {{item.inseam}}</li>
+{% endfor %}
+</form>

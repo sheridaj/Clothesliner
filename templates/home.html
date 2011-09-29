@@ -1,0 +1,11 @@
+<h1>HOME</h1>
+
+<form action="/results/" method="post">
+	{% csrf_token %}
+    <input type="text" name="waist" />
+    <label for="waist">Waist</label><br />
+	<input type="text" name="inseam" />
+    <label for="inseam">Inseam</label><br />
+
+<input type="submit" value="Compare" />
+</form>
