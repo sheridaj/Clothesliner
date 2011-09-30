@@ -67,80 +67,84 @@ class Style(models.Model):
 
 class Designer(models.Model):
 	name = models.CharField(max_length=200)
-	webAddress = models.URLField()
+	webAddress = models.URLField(null=True, blank=True)
 	def __unicode__(self):
 	        return self.name
 
 class Retailer(models.Model):
 	name = models.CharField(max_length=200)
-	webAddress = models.URLField()
+	webAddress = models.URLField(null=True, blank=True)
 	def __unicode__(self):
 	        return self.name
 
 class Item(models.Model):
-	primary_color = models.ForeignKey(Color, null=True, related_name="primary_color")
-	secondary_color = models.ForeignKey(Color, null=True, related_name="secondary_color")
-	gender = models.ForeignKey(Gender, null=True)
-	designer = models.ForeignKey(Designer, null=True)
-	manufacturing_location = models.ForeignKey(Origin, null=True)
+	primary_color = models.ForeignKey(Color, null=True, blank=True, related_name="primary_color")
+	secondary_color = models.ForeignKey(Color, null=True, blank=True, related_name="secondary_color")
+	gender = models.ForeignKey(Gender, null=True, blank=True)
+	designer = models.ForeignKey(Designer, null=True, blank=True)
+	manufacturing_location = models.ForeignKey(Origin, null=True, blank=True, related_name='manufacture_location')
 	organic = models.NullBooleanField()
-	certification = models.ForeignKey(Certification, null=True)
+	certification = models.ForeignKey(Certification, null=True, blank=True)
 	
 	class Meta:
 		abstract = True
 
-class Cloth_Item(models.Model):
-	fabric = models.ForeignKey(Fabric, null=True)
-	fabric_dimensions = models.FloatField(null=True)
-	weave = models.ForeignKey(Weave, null=True)
+class Cloth_Item(Item):
+	fabric = models.ForeignKey(Fabric, null=True, blank=True)
+	fabric_dimensions = models.FloatField(null=True, blank=True)
+	weave = models.ForeignKey(Weave, null=True, blank=True)
 	cut_on_bias = models.NullBooleanField()
 	preshrunk = models.NullBooleanField()
-	material_origin = models.ForeignKey(Origin, null=True)
-	treatment = models.ForeignKey(Treatment, null=True)
-	pattern = models.ForeignKey(Pattern, null=True)
-	pattern_thickness = models.FloatField(null=True)
-	pattern_gap_size = models.FloatField(null=True)
+	material_origin = models.ForeignKey(Origin, null=True, blank=True, related_name='material_origin')
+	treatment = models.ForeignKey(Treatment, null=True, blank=True)
+	pattern = models.ForeignKey(Pattern, null=True, blank=True)
+	pattern_thickness = models.FloatField(null=True, blank=True)
+	pattern_gap_size = models.FloatField(null=True, blank=True)
 	
 	class Meta:
 		abstract = True
 
-class Pant(Item):
-	waist = models.FloatField(null=True)
-	front_rise = models.FloatField(null=True)
-	back_rise = models.FloatField(null=True)
-	hips = models.FloatField(null=True)
-	inseam = models.FloatField(null=True)
-	thigh = models.FloatField(null=True)
-	knee = models.FloatField(null=True)
-	outseam = models.FloatField(null=True)
-	cuff = models.FloatField(null=True)
+class Pant(Cloth_Item):
+	waist = models.FloatField(null=True, blank=True)
+	front_rise = models.FloatField(null=True, blank=True)
+	back_rise = models.FloatField(null=True, blank=True)
+	hips = models.FloatField(null=True, blank=True)
+	inseam = models.FloatField(null=True, blank=True)
+	thigh = models.FloatField(null=True, blank=True)
+	knee = models.FloatField(null=True, blank=True)
+	outseam = models.FloatField(null=True, blank=True)
+	cuff = models.FloatField(null=True, blank=True)
 	cuff_unfinished = models.NullBooleanField()
-	rear_pocket_quantity = models.IntegerField(null=True)
-	rear_pocket_depth = models.FloatField(null=True)
-	rear_pocket_breadth = models.FloatField(null=True)
-	rear_pocket_style = models.ForeignKey(Pocket_Style, null=True, related_name="rear_style")
-	cargo_pocket_quantity = models.IntegerField(null=True)
-	cargo_pocket_depth = models.FloatField(null=True)
-	cargo_pocket_breadth = models.FloatField(null=True)
-	hidden_pocket_quantity = models.IntegerField(null=True)
-	hidden_pocket_location = models.ForeignKey(Pocket_Location, null=True)
-	change_pocket_quantity = models.IntegerField(null=True)
-	front_pocket_quantity = models.IntegerField(null=True)
-	front_pocket_style = models.ForeignKey(Pocket_Style, null=True, related_name="front_style")
-	front_pocket_depth = models. FloatField(null=True)
-	front_pocket_breadth = models.FloatField(null=True)
-	pleat_number = models.IntegerField(null=True)
-	belt_loop_quantity = models.IntegerField(null=True)
-	belt_loop_height = models.FloatField(null=True)
-	belt_loop_breadth = models.FloatField(null=True)
+	rear_pocket_quantity = models.IntegerField(null=True, blank=True)
+	rear_pocket_depth = models.FloatField(null=True, blank=True)
+	rear_pocket_breadth = models.FloatField(null=True, blank=True)
+	rear_pocket_style = models.ForeignKey(Pocket_Style, null=True, blank=True, related_name="rear_style")
+	cargo_pocket_quantity = models.IntegerField(null=True, blank=True)
+	cargo_pocket_depth = models.FloatField(null=True, blank=True)
+	cargo_pocket_breadth = models.FloatField(null=True, blank=True)
+	hidden_pocket_quantity = models.IntegerField(null=True, blank=True)
+	hidden_pocket_location = models.ForeignKey(Pocket_Location, null=True, blank=True)
+	change_pocket_quantity = models.IntegerField(null=True, blank=True)
+	front_pocket_quantity = models.IntegerField(null=True, blank=True)
+	front_pocket_style = models.ForeignKey(Pocket_Style, null=True, blank=True, related_name="front_style")
+	front_pocket_depth = models. FloatField(null=True, blank=True)
+	front_pocket_breadth = models.FloatField(null=True, blank=True)
+	pleat_number = models.IntegerField(null=True, blank=True)
+	belt_loop_quantity = models.IntegerField(null=True, blank=True)
+	belt_loop_height = models.FloatField(null=True, blank=True)
+	belt_loop_breadth = models.FloatField(null=True, blank=True)
 	rivets = models.NullBooleanField()
-	fly = models.ForeignKey(Fly, null=True)
-	closure = models.ForeignKey(Closure, null=True)
+	fly = models.ForeignKey(Fly, null=True, blank=True)
+	closure = models.ForeignKey(Closure, null=True, blank=True)
 	waistband_curve = models.NullBooleanField()
-	style = models.ForeignKey(Style, null=True)
+	style = models.ForeignKey(Style, null=True, blank=True)
 	def __unicode__(self):
-	        return self.designer.name+" "+self.style.name
-
+		a = "" if self.designer is None else self.designer.name
+		b = "" if self.style is None else self.style.name
+		c = "" if self.waist is None else self.waist
+		d = "" if self.inseam is None else self.inseam
+		return a+" "+b+" "+c+" "+d if a+b+c+d != "" else "Some Pants"
+	
 class Pant_Stock_Item(models.Model):
 	item = models.ForeignKey(Pant)
 	retailer = models.ForeignKey(Retailer)
