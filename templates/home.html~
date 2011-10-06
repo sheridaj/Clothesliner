@@ -1,4 +1,4 @@
-{% load static  %}
+{% load filters %}
 <html>
 <head>
 <title>Clothesliner Home Page</title>		

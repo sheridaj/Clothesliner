@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import *
 from clothes.models import *
-from Clothesliner.functions import *
+from clothesliner.functions import *
 
 def home(request):
 	q = Designer.objects.all()

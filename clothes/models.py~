@@ -105,7 +105,6 @@ class Cloth_Item(Item):
 		abstract = True
 
 class Pant(Cloth_Item):
-	brand = models.CharField(max_length=300, null=True, blank=True)
 	waist = models.FloatField(null=True, blank=True)
 	front_rise = models.FloatField(null=True, blank=True)
 	back_rise = models.FloatField(null=True, blank=True)
