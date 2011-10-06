@@ -3,79 +3,79 @@ from django.db import models
 class Fabric(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Fly(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Closure(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Weave(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Origin(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Treatment(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Pocket_Style(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Pocket_Location(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Certification(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Gender(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Color(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Pattern(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Style(models.Model):
 	name = models.CharField(max_length=200)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Designer(models.Model):
 	name = models.CharField(max_length=200)
 	webAddress = models.URLField(null=True, blank=True)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Retailer(models.Model):
 	name = models.CharField(max_length=200)
 	webAddress = models.URLField(null=True, blank=True)
 	def __unicode__(self):
-	        return self.name
+		return self.name
 
 class Item(models.Model):
 	primary_color = models.ForeignKey(Color, null=True, blank=True, related_name="primary_color")
@@ -114,6 +114,8 @@ class Pant(Cloth_Item):
 	knee = models.FloatField(null=True, blank=True)
 	outseam = models.FloatField(null=True, blank=True)
 	cuff = models.FloatField(null=True, blank=True)
+	designer_waist = models.FloatField(null=True, blank=True)
+	designer_inseam = models.FloatField(null=True, blank=True)
 	cuff_unfinished = models.NullBooleanField()
 	rear_pocket_quantity = models.IntegerField(null=True, blank=True)
 	rear_pocket_depth = models.FloatField(null=True, blank=True)
@@ -143,7 +145,7 @@ class Pant(Cloth_Item):
 		b = "" if self.style is None else self.style.name
 		c = "" if self.waist is None else self.waist
 		d = "" if self.inseam is None else self.inseam
-		return a+" "+b+" "+c+" "+d if a+b+c+d != "" else "Some Pants"
+		return a+" "+b+" "+str(c)+" "+str(d) if a+b+str(c)+str(d) != "" else "Some Pants"
 	
 class Pant_Stock_Item(models.Model):
 	item = models.ForeignKey(Pant)
