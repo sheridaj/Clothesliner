@@ -1,0 +1,142 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+  <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}js/slider2.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}{% block js %}                                                 
+  {% endblock js %}"> </script>
+  <script type="text/javascript" src="{% get_static_prefix %}{% block js2 %}                                                
+  {% endblock js2 %}"> </script>
+  <title>
+    Clothesliner
+    </title>
+</head>
+<body>
+<div id="container" class="container_16">
+
+  <div id="header" class= "alpha omega grid_16">
+    <div id="title">
+      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
+      <h2>Find  pants that fit.</h2>
+      </div> <!--closes the title div-->
+    <div id="headerlinks">
+      <ul>
+        <li><a href="/search/">Search</a></li>
+        <li><a href="/backend/">Compare Items</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/outsuccess">Logout</a></li>
+        </ul>
+      </div> <!--closes the headerlinks div-->
+    <hr />
+    </div> <!--closes the header div-->
+{% block searchcrumb %}
+{% endblock searchcrumb%}
+
+<div id="searchsidebar" class="alpha omega grid_2" >
+
+<h4>Refine By </h4>
+<dl id="searchoptions">
+
+  <dt>Price</dt>
+  <div id="dropdown">
+    <form>
+      <li><input type="checkbox" name="pricerange" value="50" /> under $50 </li>
+      <li><input type="checkbox" name="pricerange" value="100" /> $50-$100 </li>
+      <li><input type="checkbox" name="pricerange" value="150" /> $100-$150 </li>
+      <li><input type="checkbox" name="pricerange" value="200" /> $150-$200 </li>
+      </form>
+    </div>
+
+  <dt>Designer</dt>
+  <div id="dropdown">
+    <form>
+      <li><input type="checkbox" name="pricerange" value="50" />Gap</li>
+      <li><input type="checkbox" name="pricerange" value="50" />Levi's</li>
+      <li><input type="checkbox" name="pricerange" value="50" />Diesel</li>
+      <li><input type="checkbox" name="pricerange" value="50" />Banana Rep.</li>
+      <li><input type="checkbox" name="pricerange" value="50" />Feltragger</li>
+      <li><input type="checkbox" name="pricerange" value="50" />Façonnable</li>
+      <li><input type="checkbox" name="pricerange" value="50" />J. Crew</li>
+      </form>
+    </div>
+
+  <dt>Material</dt>
+  <div id="dropdown">
+    <form>
+      <li><input type="checkbox" name="pricerange" value="50" />100% Wool</li>
+      <li><input type="checkbox" name="pricerange" value="50" />100% Cotton</li>
+      <li><input type="checkbox" name="pricerange" value="50" />98% Cotton</li>
+      <li><input type="checkbox" name="pricerange" value="50" />etc.</li>
+      </form>
+    </div>
+
+  <dt>On Sale</dt>
+  <div id="dropdown">
+    <form>
+      <li><input type="checkbox" name="pricerange" value="50" />&#62 10% off</li>
+      <li><input type="checkbox" name="pricerange" value="50" />&#62 20% off</li>
+      <li><input type="checkbox" name="pricerange" value="50" />&#62 50% off</li>
+      </form>
+    </div>
+
+  <dt> Manufactured in</dt>
+  <div id="dropdown">
+    <form>
+      <li><input type="checkbox" name="pricerange" value="50" /> USA </li>
+      <li><input type="checkbox" name="pricerange" value="50" /> China </li>
+      <li><input type="checkbox" name="pricerange" value="50" /> Bangladesh </li>
+      <li><input type="checkbox" name="pricerange" value="50" /> Nepal </li>
+      </form>
+    </div>
+  </dl>
+
+</div> <!--closes #searchsidebar-->
+
+<div id="refpant" class="grid_4">
+<img src="/static/images/pant15.jpg"></img>
+<ul>
+<li id="ref_make" class="make">Designer</li>
+</br>
+<li id="ref_model" class="model">Style</li>
+<li id="ref_price" class="price">$99</li>
+</ul>
+<div id="refpant_desc" class="alpha omega grid_4">
+<p> This is your reference pant, and all your search returns are described in relation to it.
+</p>
+<li class="category">Waist</li><li>The pant is designed to sit at you natrual waist rather than at the hips </li>
+</br>
+<li class="category">Rise</li><li>The rise is relatively high so it shouldn't cup your crotch too tightly </li>
+</br>
+<li class="category">Cuff</li><li>The cuff is fairly narrow so the pant has a relatively tapered feel and it tightens as it\
+ approaches the foot
+ </li>
+</br>
+<li class="category">Thigh</li><li>The thigh fits somewhat snugly </li>
+</br>
+</div> <!--closes refpant_desc-->
+</div> <!--closes refpant-->
+
+    {% block content %}
+    {% endblock content %}
+
+
+  <div id="footer" class="alpha omega grid_16">
+    <hr />
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/search/">Search</a></li>
+        <li><a href="/backend/">Compare Items</a></li>
+	<li><a href="/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+	<li><a href="/pants/create/">Enter a Pant</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+  </div> <!--closes the footer div-->
+</div> <!--closes the container div-->
+</body>
+</html>

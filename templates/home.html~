@@ -1,4 +1,4 @@
-{% load static  %}
+{% load filters %}
 <html>
 <head>
 <title>Clothesliner Home Page</title>		
@@ -44,9 +44,6 @@ function genStyles(sel)
     <label for="waist">Waist</label><br />
 	<input type="text" name="inseam" />
     <label for="inseam">Inseam</label><br />
-    <input type="text" name="brand" />
-    <label for="brand">Brand</label><br />
-
 	<input type="submit" value="Compare" />
 </form>
 </body>
