@@ -11,15 +11,23 @@ import csv
 dataReader = csv.reader(open(csv_home, "rU"), delimiter=',')
 
 for row in dataReader:
-    add_des = Designer()
-    add_des.name = row[0]
-    add_des.webAddress = row[2]
-    add_des.save()
-    designer = Designer.objects.get(name = row[0])
-    style = Style.objects.get(name = row[4])
+#    add_des = Designer()
+ #   add_des.name = row[0]
+  #  add_des.webAddress = row[2]
+   # add_des.save()
+    designer = Designer.objects.get(name = row[1])
+    style = Style.objects.get(name = row[2])
     pant=Pant()
     pant.designer= designer
     pant.style = style
-    pant.waist=row[1]
-    pant.fabric_dimensions=row[3]
-    pant.save()
+    pant.waist=row[7]
+    pant.front_rise=row[8]
+    pant.back_rise=row[9]
+    pant.hips=row[10]
+    pant.inseam=row[11]
+    pant.thigh=row[12]
+    pant.knee=row[13]
+    pant.outseam=row[14]
+    pant.designer_waist=row[3]
+    pant.designer_inseam=row[4]
+    pant.save() 

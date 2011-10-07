@@ -28,6 +28,7 @@ for row in dataReader:
     pant.thigh=row[12]
     pant.knee=row[13]
     pant.outseam=row[14]
+    pant.cuff=row[15]
     pant.designer_waist=row[3]
     pant.designer_inseam=row[4]
     pant.save() 
