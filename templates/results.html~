@@ -1,4 +1,4 @@
-{% extends "templates/base_results.html" %}
+{% extends "templates/home2.html" %}
 
 {% block content %}
 
