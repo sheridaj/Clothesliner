@@ -4,7 +4,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'clothes.views.home'),
-    (r'^test', 'clothes.views.results_two'),
     (r'^results/$', 'clothes.views.results'),
 	(r'^product_info/$', 'clothes.views.product_info'),
 	# url(r'^clothesliner/', include('clothesliner.foo.urls')),

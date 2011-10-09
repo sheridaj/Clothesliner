@@ -1,0 +1,173 @@
+
+hr {
+width: 100%;
+background-image:url(http://static.everlane.com/distressed_topborder.png);
+background-color: #9C052A;
+height: 1px;
+line-height:0px;
+margin:0;
+border: 0;
+padding:0;
+}
+
+#title {
+float: left;
+margin-bottom:0px;
+background-color:;
+}
+
+#headerlinks{
+background-color:;
+float:right;
+margin-bottom:0;
+margin-top: 30px;
+}
+
+
+#header, #footer {height: 100px; background-color: ; text-align: center;}
+#header {margin-bottom: 10px; margin-top: 30px; background-color:;}
+#footer {margin-top:30px; margin-bottom:10px; clear:both; }
+
+#footerlinks{
+width:80%;
+margin:auto;
+text-align:center;
+margin-top:5px;
+}
+
+#headerlinks li, #footerlinks li {
+display: inline;
+padding:1em;
+}
+
+
+/* Site-wide formatting */
+a {text-decoration: none;}
+a:hover {color:9C052A;} 
+
+h1, h2, h3, h4, h5, h6, a {
+color: 23015E;
+font-family:'Palatino', serif;
+font-weight:lighter;
+text-align:left;
+}
+
+hr {
+width: 100%;
+background-image:url(http://static.everlane.com/distressed_topborder.png);
+background-color: #9C052A;
+height: 1px;
+line-height:0px;
+margin:0;
+border: 0;
+padding:0;
+}
+
+h1 {
+font-size: 50px;
+line-height: 20px;
+}
+
+h2 {
+font-size: 20px;
+line-height: 0px
+}
+
+h3 {font-size: 30px;}
+
+h4 {font-size: 16px;}
+
+
+ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+font-size: 11px;
+}
+
+li {
+list-style: none; 
+margin:0; 
+}
+
+
+/* Breadcrumb. Markup taken from http://projectcerbera.com/web/articles/breadcrumbs-markup */
+#breadcrumb, #breadcrumb ol, #breadcrumb li {
+ margin: 0;
+ padding: 0;
+ display: inline;
+ list-style: none;
+}
+#breadcrumb ol {
+ margin-left: 0.125em;
+ padding-left: 0.25em;
+ background: url(/static//images/gt.gif) no-repeat left center;
+}
+#breadcrumb li li {
+ margin-left: 8px; /* Width of the arrow */
+}
+#breadcrumb, #breadcrumb a {
+ margin-left: 0;
+ padding-left: 0;
+ color:#666;
+}
+
+/* Seach */
+#searchsidebar h4{
+font-size:18px;
+font-variant:small-caps;
+line-height:0px;
+}
+
+#searchsidebar ui {
+list-style-type:none;
+padding:0px;
+margin:0px;
+}
+
+#searchsidebar li
+{
+background-image:url(/static/images/gt.gif);
+background-repeat:no-repeat;
+background-position:0px 5px; 
+padding-left:10px;
+}
+
+#aboutsidebar {
+float: left;
+height: 500px;
+color: green;
+}
+
+
+.tile {
+margin: 5px;
+float:left;
+max-width:120px;
+}
+
+li.make, li.model, li.price, li.originalprice, li.sale {
+display: inline;
+color: 23015E;
+font-family:'Palatino', serif;
+font-size: 12px;
+}
+
+li.model, li.price, li.originalprice {color: #666;}
+li.price, li.originalprice {margin-left:15px;}
+li.sale {color:9C052A; margin-left:2px;}
+li.originalprice {text-decoration: line-through;}
+
+li.colors {
+margin: 0;
+padding: 0;
+display: inline;
+list-style: none;
+}
+
+#ref_make, #ref_model, #ref_price {font-size: 14px;}
+
+#refpant li.category{
+color: #23015E;
+font-family: 'Palatino', serif;
+}
